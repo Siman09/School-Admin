@@ -23,5 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('AcademicYear', [AcademicYearController::class, 'store'])->name('admin.academicyear.store');
         Route::get('AcademicYearread', [AcademicYearController::class, 'read'])->name('admin.academicyear.read');
         Route::get('AcademicYeardelete/{id}', [AcademicYearController::class, 'delete'])->name('admin.academicyear.delete');
+        Route::get('AcademicYearedit/{id}', [AcademicYearController::class, 'edit'])->name('admin.academicyear.edit');
+        Route::get('AcademicYearupdate', [AcademicYearController::class, 'update'])->name('admin.academicyear.update');
     });
 });

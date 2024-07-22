@@ -28,45 +28,28 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                                        <h3 class="card-title">Edit</h3>
                                     </div>
 
-                                    <div class="card-body">
-                                        <table id="example2" class="table table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Year</th>
-                                                    <th>Created Time</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($academic_year as $datas)
-                                                    <tr>
-                                                        <td>{{ $datas->id }}</td>
-                                                        <td>{{ $datas->name }}</td>
-                                                        <td>{{ $datas->created_at }}</td>
-                                                        <td><a class="btn btn-primary"
-                                                                href="{{ route('admin.academicyear.edit', $datas->id) }}">Edit</a>
-                                                        </td>
-                                                        <td><a class="btn btn-danger"
-                                                                onclick="return confirm('Are you sure want to delete {{ $datas->name }}')"
-                                                                href="{{ route('admin.academicyear.delete', $datas->id) }}">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-
+                                    @if ($academic_year)
+                                        <form action="{{ route('admin.academicyear.update') }}" method="get">
+                                            Year_id<input type="text" class="form-control"
+                                                value="{{ $academic_year->id }}" name="id" id="exampleInputEmail1"
+                                                placeholder="Enter academic year">
+                                                
+                                            Year<input type="text" class="form-control"
+                                                value="{{ $academic_year->name }}" name="name1" id="exampleInputEmail1"
+                                                placeholder="Enter academic year">
                                 </div>
+                                <button class="btn btn-primary" type="submit">Update</button>
+                                </from>
+                                <!-- Add other fields as necessary -->
+                            @else
+                                <p>No academic year found with the provided ID.</p>
+                                @endif
 
                             </div>
+
 
                         </div>
 
@@ -137,7 +120,13 @@
 
         </div>
 
-       
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+            </div>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io/">AdminLTE.io</a>.</strong> All rights
+            reserved.
+        </footer>
 
         <aside class="control-sidebar control-sidebar-dark">
 
