@@ -125,7 +125,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-       
+
 
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
@@ -333,6 +333,18 @@
                                     <a href="{{ route('admin.academicyear.read') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Listed Year</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.class.form') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add class</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.class.list') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List class</p>
                                     </a>
                                 </li>
                             </ul>
